@@ -14,4 +14,4 @@
 
 ## socket io
 
-## peerjs for handle userId
+## peerjs for handle userId npm i -g peer
