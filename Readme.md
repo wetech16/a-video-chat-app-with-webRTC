@@ -15,3 +15,4 @@
 ## socket io
 
 ## peerjs for handle userId npm i -g peer
+    server: peerjs --port 3001
