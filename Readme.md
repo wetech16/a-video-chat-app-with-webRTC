@@ -7,3 +7,12 @@
 ## npm i --save-dev nodemon
 
 ## scripts: "devStart": "nodemon server.js" -- npm run devStart
+
+## server.js
+
+## room.ejs
+
+## socket io
+
+## peerjs for handle userId npm i -g peer
+    server: peerjs --port 3001
