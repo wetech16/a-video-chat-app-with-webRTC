@@ -19,7 +19,6 @@ socket.on("user-disconnected", (userId) => {
 //mediaDevices.getUserMedia
 const myVideo = document.createElement("video");
 myVideo.muted = true;
-
 navigator.mediaDevices
   .getUserMedia({
     video: true,
@@ -34,7 +33,6 @@ navigator.mediaDevices
         addVideoStream(video, userVideoStream);
       });
     });
-
     socket.on("user-connected", (userId) => {
       connectToNewUser(userId, stream);
     });
@@ -49,7 +47,6 @@ function connectToNewUser(userId, stream) {
   call.on("close", () => {
     video.remove();
   });
-
   peers[userId] = call;
 }
 

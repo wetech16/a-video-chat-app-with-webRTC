@@ -6,11 +6,13 @@
 
 ## CSS
 
+- video-grid { display: grid; grid-template-columns }
+
 ## BackEnd
 
 - package.json
   - run { nodemon }
-- server.js
+- server.js { run devStart }
   - app { express }
     - set { 'view engine', ejs }
     - use { express.static('public') }
@@ -23,10 +25,9 @@
         - on { 'disconnect' }
           - to{roomId}.broadcast.emit{'user-disconnected', userId}
   - server.listen
-- room.ejs
+- room.ejs { script src: server, socket.io, script }
   - style
-  - script { express.get(/room), socket.on }
-- script.js
+- script.js { peerJs server: peerjs --port 3001 }
   - new Peer { peerJs }
     - on { 'open', id }
       - socket.emit{'join-room', ROOM_ID, id }socket.emit
