@@ -5,6 +5,7 @@
 ## React
 
 ## CSS
+- video-grid { display: grid; grid-template-columns }
 
 ## BackEnd
 - package.json
@@ -54,7 +55,7 @@
                 - play
             - videoGrid.append{video}
 -----
-v4: from uuid
-room.ejs: ejs
-peerJs: userId generated server peerjs --port 3001
-i --save-dev nodemon
+- v4: from uuid
+- room.ejs: ejs
+- peerJs: userId generated server peerjs --port 3001
+- i --save-dev nodemon
