@@ -1,18 +1,62 @@
-## boilplate package.json npm init -y
+# Build a video chat app with WebRTC
 
-## backend npm i express ejs socket.io
+## VSCODE
 
-## dependency npm i uuid
+## React
 
-## npm i --save-dev nodemon
+## CSS
 
-## scripts: "devStart": "nodemon server.js" -- npm run devStart
+## BackEnd
 
-## server.js
+- package.json
+  - run { nodemon }
+- server.js
+  - app { express }
+    - set { 'view engine', ejs }
+    - use { express.static('public') }
+    - render { 'room', roomId, | get{'/:room'}, v4 , redirect }
+  - io { socket.io }
+    - on { 'connection' }
+      - on {'join-room', roomId, userId}
+        - join { roomId }
+        - to {roomId}.broadcast.emit { 'user-connected', userId }
+        - on { 'disconnect' }
+          - to{roomId}.broadcast.emit{'user-disconnected', userId}
+  - server.listen
+- room.ejs
+  - style
+  - script { express.get(/room), socket.on }
+- script.js
+  - new Peer { peerJs }
+    - on { 'open', id }
+      - socket.emit{'join-room', ROOM_ID, id }socket.emit
+    - on { 'call', call}
+      - answer { stream }
+      - on { ' stream, userVideoStream }
+        - addVideoStream{video, userVideoStream}
+  - socket { io('/') }
+    - on {'user-connected', userId}
+      - connectToNewUser {userId, stream}
+        - call {userId, stream}
+          - on {'stream', userVideoStream}
+            - addVideoStrewam {video, userVideoStream}
+          - on {'close'}
+            - video.remove
+    - on {'user-disconnected', userId }
+      - close()
+  - videoGrid {getElementById('video-grid')}
+  - myVideo {createElement('video')
+    - myVideo.muted
+  - getUserMedia
+    - addVideoStream{myVideo, stream}
+      - srcObject{stream}
+      - addEventListener{'loadedmetadata'}
+        - play
+      - videoGrid.append{video}
 
-## room.ejs
+---
 
-## socket io
-
-## peerjs for handle userId npm i -g peer
-    server: peerjs --port 3001
+v4: from uuid
+room.ejs: ejs
+peerJs: userId generated server peerjs --port 3001
+i --save-dev nodemon
