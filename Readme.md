@@ -56,7 +56,7 @@
 
 ---
 
-v4: from uuid
-room.ejs: ejs
-peerJs: userId generated server peerjs --port 3001
-i --save-dev nodemon
+- v4: from uuid
+- room.ejs: ejs
+- peerJs: userId generated server peerjs --port 3001
+- i --save-dev nodemon
