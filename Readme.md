@@ -16,8 +16,8 @@
         - render { 'room', roomId, | get{'/:room'}, v4 , redirect } 
         
     - io { socket.io } 
-        .on { 'connection' }
-            .on {'join-room', roomId, userId}
+       - on { 'connection' }
+           - on {'join-room', roomId, userId}
                 - join { roomId  }
                 - to {roomId}.broadcast.emit { 'user-connected', userId }
                 - on { 'disconnect' }
