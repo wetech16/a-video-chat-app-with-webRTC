@@ -1,9 +1,8 @@
-## Build a video chat app with WebRTC
+# Build a video chat app with WebRTC
 
 ## VSCODE
 
 ## React
--
 
 ## CSS
 
